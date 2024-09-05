@@ -1,6 +1,31 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export class Card extends Component {
+  static defaultProps = {
+    title: "",
+    desc: "",
+    img: "",
+    url: "",
+    author: "",
+    styleState: {
+      type: "light",
+      color: "#000",
+    },
+  };
+
+  static propTypes = {
+    title: PropTypes.string,
+    desc: PropTypes.string,
+    img: PropTypes.string,
+    url: PropTypes.string,
+    author: PropTypes.string,
+    styleState: PropTypes.shape({
+      type: PropTypes.string,
+      color: PropTypes.string,
+    }),
+  };
+
   render() {
     let { title, desc, img, url, author, styleState } = this.props;
 
@@ -11,10 +36,11 @@ export class Card extends Component {
       return index === -1 ? str : str.substring(0, index);
     }
 
-    let truncatedTitle = truncateLast(title, '-', '|');
-    let truncatedDesc = desc.length > 100 ? desc.substring(0, 100) + "..." : desc;
-    let truncatedAuthor = author.length > 20 ? '' : author;
-    console.log(truncatedAuthor)
+    let truncatedTitle = truncateLast(title, "-", "|");
+    let truncatedDesc =
+      desc && desc.length > 100 ? desc.substring(0, 100) + "..." : desc;
+    let truncatedAuthor = author && author.length > 20 ? "" : author;
+    console.log(truncatedAuthor);
 
     return (
       <div
@@ -40,17 +66,37 @@ export class Card extends Component {
           }}
         />
         <div className="card-body d-flex flex-column" style={{ flex: 1 }}>
-          <h5 className="card-title" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <h5
+            className="card-title"
+            style={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          >
             {truncatedTitle}
           </h5>
-          <p className="card-text" style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          <p
+            className="card-text"
+            style={{ flex: 1, overflow: "hidden", textOverflow: "ellipsis" }}
+          >
             {truncatedDesc}
           </p>
-          <div className="d-flex justify-content-between align-items-center mt-2" style={{ marginTop: 'auto' }}>
+          <div
+            className="d-flex justify-content-between align-items-center mt-2"
+            style={{ marginTop: "auto" }}
+          >
             <a href={url} className="btn btn-sm btn-primary">
               Read More
             </a>
-            <figcaption className="blockquote-footer my-1" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <figcaption
+              className="blockquote-footer my-1"
+              style={{
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
               {truncatedAuthor}
             </figcaption>
           </div>
