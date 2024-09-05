@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Nidhi-Chaudhary212/Daily-News/static/css/main.69bc0fef.css",
+    "main.js": "/Nidhi-Chaudhary212/Daily-News/static/js/main.64136e6d.js",
+    "static/js/787.965707ee.chunk.js": "/Nidhi-Chaudhary212/Daily-News/static/js/787.965707ee.chunk.js",
+    "static/media/Spinner.gif": "/Nidhi-Chaudhary212/Daily-News/static/media/Spinner.4b7cd58717fa7c4970db.gif",
+    "index.html": "/Nidhi-Chaudhary212/Daily-News/index.html",
+    "main.69bc0fef.css.map": "/Nidhi-Chaudhary212/Daily-News/static/css/main.69bc0fef.css.map",
+    "main.64136e6d.js.map": "/Nidhi-Chaudhary212/Daily-News/static/js/main.64136e6d.js.map",
+    "787.965707ee.chunk.js.map": "/Nidhi-Chaudhary212/Daily-News/static/js/787.965707ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69bc0fef.css",
+    "static/js/main.64136e6d.js"
+  ]
+}
